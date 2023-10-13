@@ -78,7 +78,10 @@ class Calculadora:
     def AdicionarOperador(self, operador):
         NumeroAtual = self.LabelMostrador["text"]
         if NumeroAtual[-1] not in ['+', '-', '*', '/', '^', '√']:
-            self.LabelMostrador["text"] = NumeroAtual + operador
+            if NumeroAtual == "0.00":
+                self.LabelMostrador["text"] = operador
+            else:
+                self.LabelMostrador["text"] = NumeroAtual + operador
 
     def AdicionarPonto(self, ponto):
         NumeroAtual = self.LabelMostrador["text"]
